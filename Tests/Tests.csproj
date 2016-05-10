@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{19D5D9FB-D293-4B5B-9895-BC93F7E515F8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tests</RootNamespace>
+    <AssemblyName>Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise />
+  </Choose>
+  <ItemGroup>
+    <Compile Include="CollectionExtensions.cs" />
+    <Compile Include="Day1\INotQuiteLisp.cs" />
+    <Compile Include="Day1\INotQuiteLispPositionFinder.cs" />
+    <Compile Include="Day4\ILowestNumberForMd5WithAtLeastFiveLeadingZerosFinder.cs" />
+    <Compile Include="Day4\LowestNumberForMd5WithAtLeastFiveLeadingZerosFinder.cs" />
+    <Compile Include="Day4\TheIdealStockingStufferTests.cs" />
+    <Compile Include="Day5\DoesntHeHaveInternElvesForThisTests.cs" />
+    <Compile Include="Day5\INaughtyOrNiceStringRecognizer.cs" />
+    <Compile Include="Day5\INaughtyOrNiceStringsCounter.cs" />
+    <Compile Include="Day5\PartOneNaughtyOrNiceStringRecognizer.cs" />
+    <Compile Include="Day5\NaughtyOrNiceStringsCounter.cs" />
+    <Compile Include="Day5\PartTwoNaughtyOrNiceStringRecognizer.cs" />
+    <Compile Include="Day6\ILight.cs" />
+    <Compile Include="Day6\ILightsGrid.cs" />
+    <Compile Include="Day6\ILightsGridController.cs" />
+    <Compile Include="Day6\PartOneLight.cs" />
+    <Compile Include="Day6\LightsGrid.cs" />
+    <Compile Include="Day6\LightsGridController.cs" />
+    <Compile Include="Day6\LightsGroup.cs" />
+    <Compile Include="Day6\PartTwoLight.cs" />
+    <Compile Include="Day6\Point.cs" />
+    <Compile Include="Day6\ProbablyAFireHazardTests.cs" />
+    <Compile Include="Day7\CircuitBoard.Commands.cs" />
+    <Compile Include="Day7\CircuitBoard.cs" />
+    <Compile Include="Day7\Day7Extensions.cs" />
+    <Compile Include="Day7\ICircuitBoard.cs" />
+    <Compile Include="Day7\IWire.cs" />
+    <Compile Include="Day7\SomeAssemblyRequiredTests.cs" />
+    <Compile Include="Tools\IParser.cs" />
+    <Compile Include="Day1\NotQuiteLisp.cs" />
+    <Compile Include="Day1\NotQuiteLispPositionFinder.cs" />
+    <Compile Include="Day1\NotQuiteLispTests.cs" />
+    <Compile Include="Day2\IWrappingPaperParser.cs" />
+    <Compile Include="Day2\Present.cs" />
+    <Compile Include="Day2\WrappingPaperParser.cs" />
+    <Compile Include="Day2\WrappingPaperTests.cs" />
+    <Compile Include="Day3\IPerfectlySphericalHousesInAVacuum.cs" />
+    <Compile Include="Day3\PerfectlySphericalHousesInAVacuum.cs" />
+    <Compile Include="Day3\PerfectlySphericalHousesInAVacuumTests.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Test.cs" />
+    <Compile Include="TestBase.cs" />
+    <Compile Include="TestBaseTest.cs" />
+    <Compile Include="Tools\Parser.cs" />
+    <Compile Include="Utils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Extensions.Conventions, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Extensions.Conventions.3.2.0.0\lib\net45-full\Ninject.Extensions.Conventions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.2.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.2.0\lib\net45\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Day1\Not Quite Lisp.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Day1\NotQuiteLisp_PuzzleInput.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Day2\I Was Told There Would Be No Math.txt" />
+    <None Include="Day3\Perfectly Spherical Houses in a Vacuum.txt" />
+    <EmbeddedResource Include="Day2\IWasToldThereWouldBeNoMath_PuzzleInput.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Day3\PerfectlySphericalHousesInAVacuum_PuzzleInput.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Day4\The Ideal Stocking Stuffer.txt" />
+    <EmbeddedResource Include="Day4\TheIdealStockingStuffer_PuzzleInput.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Day5\Doesn%27t He Have Intern-Elves For This.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Day5\DoesntHeHaveIntern-ElvesForThis_PuzzleInput.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Day6\Probably a Fire Hazard.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Day6\ProbablyAFireHazard_PuzzleInput.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Day7\Some Assembly Required.txt" />
+    <EmbeddedResource Include="Day7\SomeAssemblyRequired_PuzzleInput.txt" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
