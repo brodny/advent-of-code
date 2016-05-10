@@ -2,10 +2,10 @@
 
 namespace Tests.Day7
 {
-    public interface ICircuitBoard : IEnumerable<IWire>
+    public interface ICircuitBoard
     {
-        void ProcessCommand(string command);
+        void ProcessCommand(string commandStr);
         void ProcessCommands(IEnumerable<string> commands);
-        IWire this[string identifier] { get; }
+        ISignalSource this[string wireIdentifier] { get; }
     }
 }

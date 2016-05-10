@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Tests.Day7
+namespace Tests
 {
-    public static class Day7Extensions
+    public static class StringExtensions
     {
         public static string[] SplitAndRemoveEmptyEntries(this string @string, string separator)
         {
