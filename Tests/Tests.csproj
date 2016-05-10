@@ -77,8 +77,6 @@
     <Compile Include="Day7\SignalSourceBase.cs" />
     <Compile Include="Day7\TwoInputsGate.cs" />
     <Compile Include="Day7\BaseGate.cs" />
-    <Compile Include="Day7\IOldCircuitBoard.cs" />
-    <Compile Include="Day7\IOldWire.cs" />
     <Compile Include="Day7\SomeAssemblyRequiredTests.cs" />
     <Compile Include="Day7\Wire.cs" />
     <Compile Include="StringExtensions.cs" />

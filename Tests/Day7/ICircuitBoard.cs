@@ -6,6 +6,7 @@ namespace Tests.Day7
     {
         void ProcessCommand(string commandStr);
         void ProcessCommands(IEnumerable<string> commands);
-        ISignalSource this[string wireIdentifier] { get; }
+        Wire this[string wireIdentifier] { get; }
+        IEnumerable<Wire> Wires { get; }
     }
 }

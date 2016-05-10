@@ -1,4 +1,5 @@
 ﻿using Ninject;
+using System.Linq;
 using NUnit.Framework;
 using System;
 
@@ -137,22 +138,23 @@ namespace Tests.Day7
             Console.WriteLine($"Answer = {wireAFinalSignal}");
         }
 
-        //[Test]
-        //public void SomeAssemblyRequired_part_two_Get_answer()
-        //{
-        //    string myPuzzleInput = Utils.GetTextFromResource("Tests.Day7.SomeAssemblyRequired_PuzzleInput.txt");
-        //    string[] mySplittedPuzzleInput = Utils.SplitLines(myPuzzleInput);
+        [Test]
+        public void SomeAssemblyRequired_part_two_Get_answer()
+        {
+            string myPuzzleInput = Utils.GetTextFromResource("Tests.Day7.SomeAssemblyRequired_PuzzleInput.txt");
+            string[] mySplittedPuzzleInput = Utils.SplitLines(myPuzzleInput);
 
-        //    ICircuitBoard circuitBoard = Kernel.Get<ICircuitBoard>();
-        //    circuitBoard.ProcessCommands(mySplittedPuzzleInput);
-        //    ushort? wireASignal = circuitBoard["a"].Signal;
-        //    foreach (IWire wire in circuitBoard)
-        //    {
-        //        wire.Signal = null;
-        //    }
-        //    circuitBoard["b"].Signal = wireASignal;
-        //    ushort? wireAFinalSignal = circuitBoard["a"].Signal;
-        //    Console.WriteLine($"Answer = {wireAFinalSignal}");
-        //}
+            ICircuitBoard circuitBoard = Kernel.Get<ICircuitBoard>();
+            circuitBoard.ProcessCommands(mySplittedPuzzleInput);
+            ushort? wireASignal = circuitBoard["a"].Signal;
+            foreach (Wire wire in circuitBoard.Wires.Where(wire => wire.Input1 is ConstantSignalSource))
+            {
+                ((ConstantSignalSource)wire.Input1).SetSignal(null);
+            }
+            ((ConstantSignalSource)circuitBoard["b"].Input1).SetSignal(wireASignal);
+            //circuitBoard["b"].Signal = wireASignal;
+            ushort? wireAFinalSignal = circuitBoard["a"].Signal;
+            Console.WriteLine($"Answer = {wireAFinalSignal}");
+        }
     }
 }

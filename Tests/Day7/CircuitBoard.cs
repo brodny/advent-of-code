@@ -85,16 +85,8 @@ namespace Tests.Day7
             return GetWire(commandStr);
         }
 
-        public ISignalSource this[string wireIdentifier]
-        {
-            get
-            {
-                CheckIfIdentifierIsCorrect(wireIdentifier);
-                AssureThatAWireExists(wireIdentifier);
-                Debug.Assert(_wires.ContainsKey(wireIdentifier));
-                return _wires[wireIdentifier];
-            }
-        }
+        public Wire this[string wireIdentifier] => GetWire(wireIdentifier);
+        public IEnumerable<Wire> Wires => _wires.Values;
 
         private readonly Dictionary<string, Wire> _wires = new Dictionary<string, Wire>();
 
