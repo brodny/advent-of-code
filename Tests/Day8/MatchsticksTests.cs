@@ -55,5 +55,20 @@ namespace Tests.Day8
             IComposedStringParseResult result = stringParser.Parse(mySplittedPuzzleInput);
             Console.WriteLine($"Answer = {result.CharactersOfCode - result.Length}");
         }
+
+        // "" encodes to "\"\"", an increase from 2 characters to 6.
+        [TestCase("\"\"", ExpectedResult = 6)]
+        // "abc" encodes to "\"abc\"", an increase from 5 characters to 9.
+        [TestCase("\"abc\"", ExpectedResult = 9)]
+        // "aaa\"aaa" encodes to "\"aaa\\\"aaa\"", an increase from 10 characters to 16.
+        [TestCase("\"aaa\\\"aaa\"", ExpectedResult = 16)]
+        // "\x27" encodes to "\"\\x27\"", an increase from 6 characters to 11.
+        [TestCase("\"\\x27\"", ExpectedResult = 11)]
+        public int Encoded_string_length_is_correctly_computed(string input)
+        {
+            IStringParser stringParser = Kernel.Get<IStringParser>();
+            IStringParseResult result = stringParser.Parse(input);
+            return result.EncodedLength;
+        }
     }
 }

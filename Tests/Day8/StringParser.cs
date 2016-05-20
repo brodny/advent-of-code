@@ -51,6 +51,7 @@ namespace Tests.Day8
 
             public int CharactersOfCode { get; }
             public int Length { get; }
+            public int EncodedLength { get; }
         }
 
         private sealed class ComposedStringParseResult : IComposedStringParseResult
@@ -71,6 +72,7 @@ namespace Tests.Day8
 
             public int CharactersOfCode { get; }
             public int Length { get; }
+            public int EncodedLength { get; }
 
             public IEnumerator<IStringParseResult> GetEnumerator() => _results.GetEnumerator();
             IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();

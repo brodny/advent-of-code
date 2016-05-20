@@ -4,5 +4,6 @@
     {
         int CharactersOfCode { get; }
         int Length { get; }
+        int EncodedLength { get; }
     }
 }
