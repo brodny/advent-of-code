@@ -88,6 +88,11 @@
     <Compile Include="Day8\StringEncoder.cs" />
     <Compile Include="Day8\StringLengthComputer.cs" />
     <Compile Include="Day8\StringParser.cs" />
+    <Compile Include="Day9\AllInASingleNightTests.cs" />
+    <Compile Include="Day9\IGraph.cs" />
+    <Compile Include="Day9\IGraphDistanceCalculator.cs" />
+    <Compile Include="Day9\IGraphParser.cs" />
+    <Compile Include="Day9\IShortestDistanceCalculator.cs" />
     <Compile Include="StringExtensions.cs" />
     <Compile Include="Tools\IParser.cs" />
     <Compile Include="Day1\NotQuiteLisp.cs" />
@@ -164,6 +169,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Day8\Matchsticks_PuzzleInput.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Day9\All in a Single Night.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Day9\AllInASingleNight_PuzzleInput.txt" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
