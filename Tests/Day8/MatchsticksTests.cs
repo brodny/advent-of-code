@@ -70,5 +70,16 @@ namespace Tests.Day8
             IStringParseResult result = stringParser.Parse(input);
             return result.EncodedLength;
         }
+
+        [Test]
+        public void Matchsticks_part_two_Get_answer()
+        {
+            string myPuzzleInput = Utils.GetTextFromResource("Tests.Day8.Matchsticks_PuzzleInput.txt");
+            string[] mySplittedPuzzleInput = Utils.SplitLines(myPuzzleInput);
+
+            IStringParser stringParser = Kernel.Get<IStringParser>();
+            IComposedStringParseResult result = stringParser.Parse(mySplittedPuzzleInput);
+            Console.WriteLine($"Answer = {result.EncodedLength - result.CharactersOfCode}");
+        }
     }
 }
