@@ -8,13 +8,18 @@ namespace Tests.Day8
     public sealed class StringParser : IStringParser
     {
         private readonly IStringLengthComputer _stringLengthComputer;
+        private readonly IStringEncoder _stringEncoder;
 
-        public StringParser(IStringLengthComputer stringLengthComputer)
+        public StringParser(IStringLengthComputer stringLengthComputer,
+            IStringEncoder stringEncoder)
         {
             if (stringLengthComputer == null)
                 throw new ArgumentNullException(nameof(stringLengthComputer));
+            if (stringEncoder == null)
+                throw new ArgumentNullException(nameof(stringEncoder));
 
             _stringLengthComputer = stringLengthComputer;
+            _stringEncoder = stringEncoder;
         }
 
         public IStringParseResult Parse(string input)
@@ -24,8 +29,9 @@ namespace Tests.Day8
 
             int charactersOfCode = input.Length;
             int length = _stringLengthComputer.ComputeLength(input);
+            int encodedLength = _stringEncoder.Encode(input).Length;
 
-            StringParseResult result = new StringParseResult(charactersOfCode, length);
+            StringParseResult result = new StringParseResult(charactersOfCode, length, encodedLength);
             return result;
         }
 
@@ -43,10 +49,11 @@ namespace Tests.Day8
 
         private sealed class StringParseResult : IStringParseResult
         {
-            public StringParseResult(int charactersOfCode, int length)
+            public StringParseResult(int charactersOfCode, int length, int encodedLength)
             {
                 CharactersOfCode = charactersOfCode;
                 Length = length;
+                EncodedLength = encodedLength;
             }
 
             public int CharactersOfCode { get; }
@@ -68,6 +75,7 @@ namespace Tests.Day8
                 _results = results.ToList().AsReadOnly();
                 CharactersOfCode = _results.Sum(result => result.CharactersOfCode);
                 Length = _results.Sum(result => result.Length);
+                EncodedLength = _results.Sum(result => result.EncodedLength);
             }
 
             public int CharactersOfCode { get; }

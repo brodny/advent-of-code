@@ -80,10 +80,12 @@
     <Compile Include="Day7\SomeAssemblyRequiredTests.cs" />
     <Compile Include="Day7\Wire.cs" />
     <Compile Include="Day8\IComposedStringParseResult.cs" />
+    <Compile Include="Day8\IStringEncoder.cs" />
     <Compile Include="Day8\IStringLengthComputer.cs" />
     <Compile Include="Day8\IStringParser.cs" />
     <Compile Include="Day8\MatchsticksTests.cs" />
     <Compile Include="Day8\IStringParseResult.cs" />
+    <Compile Include="Day8\StringEncoder.cs" />
     <Compile Include="Day8\StringLengthComputer.cs" />
     <Compile Include="Day8\StringParser.cs" />
     <Compile Include="StringExtensions.cs" />
