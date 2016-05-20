@@ -89,10 +89,13 @@
     <Compile Include="Day8\StringLengthComputer.cs" />
     <Compile Include="Day8\StringParser.cs" />
     <Compile Include="Day9\AllInASingleNightTests.cs" />
+    <Compile Include="Day9\Graph.cs" />
+    <Compile Include="Day9\GraphParser.cs" />
     <Compile Include="Day9\IGraph.cs" />
     <Compile Include="Day9\IGraphDistanceCalculator.cs" />
     <Compile Include="Day9\IGraphParser.cs" />
     <Compile Include="Day9\IShortestDistanceCalculator.cs" />
+    <Compile Include="Day9\ShortestDistanceCalculator.cs" />
     <Compile Include="StringExtensions.cs" />
     <Compile Include="Tools\IParser.cs" />
     <Compile Include="Day1\NotQuiteLisp.cs" />
