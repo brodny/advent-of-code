@@ -1,5 +1,6 @@
 ﻿using Ninject;
 using NUnit.Framework;
+using System;
 using System.Collections.Generic;
 
 namespace Tests.Day9
@@ -24,6 +25,20 @@ namespace Tests.Day9
 
             CollectionAssert.AreEqual(new List<string>() { "London", "Dublin", "Belfast", }, shortestRoute.Route);
             Assert.AreEqual(605, shortestRoute.TotalWeight);
+        }
+
+        [Test]
+        public void AllInASingleNight_Get_answer()
+        {
+            string myPuzzleInput = Utils.GetTextFromResource("Tests.Day9.AllInASingleNight_PuzzleInput.txt");
+            string[] citiesAndDistances = Utils.SplitLines(myPuzzleInput);
+
+            IGraphParser parser = Kernel.Get<IGraphParser>();
+            IGraph graph = parser.Parse(citiesAndDistances);
+            IShortestRouteCalculator calculator = Kernel.Get<IShortestRouteCalculator>();
+            IGraphRoute shortestRoute = calculator.Calculate(graph);
+
+            Console.WriteLine($"Answer = {shortestRoute.TotalWeight}");
         }
     }
 }
