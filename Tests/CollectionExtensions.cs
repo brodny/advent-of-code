@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Tests
 {
@@ -16,6 +17,13 @@ namespace Tests
             {
                 action(item);
             }
+        }
+
+        public static IEnumerable<T> Except<T>(this IEnumerable<T> enumerable, T element) => enumerable.Except(element.AsEnumerable());
+
+        public static IEnumerable<T> AsEnumerable<T>(this T element)
+        {
+            yield return element;
         }
     }
 }

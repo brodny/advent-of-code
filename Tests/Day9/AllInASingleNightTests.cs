@@ -1,5 +1,6 @@
 ﻿using Ninject;
 using NUnit.Framework;
+using System.Collections.Generic;
 
 namespace Tests.Day9
 {
@@ -18,10 +19,11 @@ namespace Tests.Day9
 
             IGraphParser parser = Kernel.Get<IGraphParser>();
             IGraph graph = parser.Parse(citiesAndDistances);
-            IShortestDistanceCalculator calculator = Kernel.Get<IShortestDistanceCalculator>();
-            int shortestDistance = calculator.Calculate(graph);
+            IShortestRouteCalculator calculator = Kernel.Get<IShortestRouteCalculator>();
+            IGraphRoute shortestRoute = calculator.Calculate(graph);
 
-            Assert.AreEqual(605, shortestDistance);
+            CollectionAssert.AreEqual(new List<string>() { "London", "Dublin", "Belfast", }, shortestRoute.Route);
+            Assert.AreEqual(605, shortestRoute.TotalWeight);
         }
     }
 }
