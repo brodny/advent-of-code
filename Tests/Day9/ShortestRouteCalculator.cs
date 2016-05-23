@@ -7,14 +7,14 @@ namespace Tests.Day9
 {
     public sealed class ShortestRouteCalculator : IShortestRouteCalculator, IGraphRouteCalculator
     {
-        private readonly IPermutationGenerator _permutationGenerator;
+        private readonly IHamiltonianPathsFinder _hamiltonianPathsFinder;
 
-        public ShortestRouteCalculator(IPermutationGenerator permutationGenerator)
+        public ShortestRouteCalculator(IHamiltonianPathsFinder hamiltonianPathsFinder)
         {
-            if (permutationGenerator == null)
-                throw new ArgumentNullException(nameof(permutationGenerator));
+            if (hamiltonianPathsFinder == null)
+                throw new ArgumentNullException(nameof(hamiltonianPathsFinder));
 
-            _permutationGenerator = permutationGenerator;
+            _hamiltonianPathsFinder = hamiltonianPathsFinder;
         }
 
         public IGraphRoute Calculate(IGraph graph)
@@ -32,18 +32,18 @@ namespace Tests.Day9
             Debug.Assert(graph != null);
 
             IEnumerable<string> vertices = graph.Vertices;
-            IEnumerable<IEnumerable<string>> allPossibleRoutes = GenerateAllPermutations(vertices);
+            IEnumerable<IEnumerable<string>> allPossibleRoutes = FindAllHamiltonianPaths(graph);
+            List<List<string>> test = allPossibleRoutes.Select(x => x.ToList()).ToList();
             IEnumerable<GraphRoute> allRoutes = allPossibleRoutes.Select(possibleRoute => ComputeRoute(possibleRoute, graph));
             return allRoutes;
         }
 
-        private IEnumerable<IEnumerable<string>> GenerateAllPermutations(IEnumerable<string> vertices)
+        private IEnumerable<IEnumerable<string>> FindAllHamiltonianPaths(IGraph graph)
         {
-            Debug.Assert(vertices != null);
-            Debug.Assert(vertices.All(vertex => !string.IsNullOrWhiteSpace(vertex)));
+            Debug.Assert(graph != null);
 
-            IEnumerable<IEnumerable<string>> allPermutations = _permutationGenerator.Generate(vertices);
-            return allPermutations;
+            IEnumerable<IEnumerable<string>> allHamiltonianPaths = _hamiltonianPathsFinder.FindPaths(graph);
+            return allHamiltonianPaths;
         }
 
         private GraphRoute ComputeRoute(IEnumerable<string> route, IGraph graph)

@@ -23,7 +23,8 @@ namespace Tests.Day9
             IShortestRouteCalculator calculator = Kernel.Get<IShortestRouteCalculator>();
             IGraphRoute shortestRoute = calculator.Calculate(graph);
 
-            CollectionAssert.AreEqual(new List<string>() { "London", "Dublin", "Belfast", }, shortestRoute.Route);
+            Assert.That(shortestRoute.Route, Is.EquivalentTo(new List<string>() { "London", "Dublin", "Belfast", })
+                | Is.EquivalentTo(new List<string>() { "Belfast", "Dublin", "London", }));
             Assert.AreEqual(605, shortestRoute.TotalWeight);
         }
 
@@ -39,6 +40,7 @@ namespace Tests.Day9
             IGraphRoute shortestRoute = calculator.Calculate(graph);
 
             Console.WriteLine($"Answer = {shortestRoute.TotalWeight}");
+            Console.WriteLine($"Route = {string.Join(" ", shortestRoute.Route)}");
         }
     }
 }

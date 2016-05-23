@@ -91,13 +91,13 @@
     <Compile Include="Day9\AllInASingleNightTests.cs" />
     <Compile Include="Day9\Graph.cs" />
     <Compile Include="Day9\GraphParser.cs" />
+    <Compile Include="Day9\HamiltonianPathsFinder.cs" />
     <Compile Include="Day9\IGraph.cs" />
     <Compile Include="Day9\IGraphRoute.cs" />
     <Compile Include="Day9\IGraphRouteCalculator.cs" />
     <Compile Include="Day9\IGraphParser.cs" />
-    <Compile Include="Day9\IPermutationGenerator.cs" />
+    <Compile Include="Day9\IHamiltonianPathsFinder.cs" />
     <Compile Include="Day9\IShortestRouteCalculator.cs" />
-    <Compile Include="Day9\PermutationGenerator.cs" />
     <Compile Include="Day9\ShortestRouteCalculator.cs" />
     <Compile Include="StringExtensions.cs" />
     <Compile Include="Tools\IParser.cs" />
