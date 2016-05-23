@@ -97,8 +97,11 @@
     <Compile Include="Day9\IGraphRouteCalculator.cs" />
     <Compile Include="Day9\IGraphParser.cs" />
     <Compile Include="Day9\IHamiltonianPathsFinder.cs" />
+    <Compile Include="Day9\ILongestRouteCalculator.cs" />
     <Compile Include="Day9\IShortestRouteCalculator.cs" />
+    <Compile Include="Day9\LongestRouteCalculator.cs" />
     <Compile Include="Day9\ShortestRouteCalculator.cs" />
+    <Compile Include="Day9\SpecifiedRouteCalculator.cs" />
     <Compile Include="StringExtensions.cs" />
     <Compile Include="Tools\IParser.cs" />
     <Compile Include="Day1\NotQuiteLisp.cs" />

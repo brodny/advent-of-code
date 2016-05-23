@@ -4,9 +4,9 @@ using System.Linq;
 
 namespace Tests.Day9
 {
-    public sealed class ShortestRouteCalculator : SpecifiedRouteCalculator, IShortestRouteCalculator
+    public sealed class LongestRouteCalculator : SpecifiedRouteCalculator, ILongestRouteCalculator
     {
-        public ShortestRouteCalculator(IHamiltonianPathsFinder hamiltonianPathsFinder)
+        public LongestRouteCalculator(IHamiltonianPathsFinder hamiltonianPathsFinder)
             : base(hamiltonianPathsFinder)
         {
         }
@@ -18,7 +18,7 @@ namespace Tests.Day9
             if (routes.Any(route => route == null))
                 throw new ArgumentException("One of routes is null", nameof(routes));
 
-            IOrderedEnumerable<IGraphRoute> sortedRoutes = routes.OrderBy(route => route.TotalWeight);
+            IOrderedEnumerable<IGraphRoute> sortedRoutes = routes.OrderByDescending(route => route.TotalWeight);
             IGraphRoute longestRoute = sortedRoutes.FirstOrDefault();
             return longestRoute;
         }
