@@ -1,5 +1,6 @@
 ﻿using Ninject;
 using NUnit.Framework;
+using System;
 
 namespace Tests.Day10
 {
@@ -21,6 +22,17 @@ namespace Tests.Day10
             ILookAndSayProcessor lookAndSayProcessor = Kernel.Get<ILookAndSayProcessor>();
             string result = lookAndSayProcessor.Process(input);
             return result;
+        }
+
+        [Test]
+        public void ElvesLookElvesSay_Get_answer()
+        {
+            string myPuzzleInput = Utils.GetTextFromResource("Tests.Day10.ElvesLookElvesSay_PuzzleInput.txt");
+
+            ILookAndSayProcessor lookAndSayProcessor = Kernel.Get<ILookAndSayProcessor>();
+            string result = lookAndSayProcessor.ProcessIteratively(myPuzzleInput, 40);
+
+            Console.WriteLine($"Answer = {result.Length}");
         }
     }
 }

@@ -27,6 +27,21 @@ namespace Tests.Day10
             return resultBuilder.ToString();
         }
 
+        public string ProcessIteratively(string input, int numberOfIterations)
+        {
+            if (input == null)
+                throw new ArgumentNullException(nameof(input));
+            if (numberOfIterations < 1)
+                throw new ArgumentOutOfRangeException(nameof(numberOfIterations), "Number of iterations must be equal to or larger than 1.");
+
+            for (int i = 0; i < numberOfIterations; ++i)
+            {
+                input = Process(input);
+            }
+
+            return input;
+        }
+
         private string GetTheSameCharacters(string input, int startingIndex)
         {
             Debug.Assert(input != null);
