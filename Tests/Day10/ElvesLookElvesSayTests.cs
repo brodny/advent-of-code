@@ -34,5 +34,16 @@ namespace Tests.Day10
 
             Console.WriteLine($"Answer = {result.Length}");
         }
+
+        [Test]
+        public void ElvesLookElvesSay_part_two_Get_answer()
+        {
+            string myPuzzleInput = Utils.GetTextFromResource("Tests.Day10.ElvesLookElvesSay_PuzzleInput.txt");
+
+            ILookAndSayProcessor lookAndSayProcessor = Kernel.Get<ILookAndSayProcessor>();
+            string result = lookAndSayProcessor.ProcessIteratively(myPuzzleInput, 50);
+
+            Console.WriteLine($"Answer = {result.Length}");
+        }
     }
 }
