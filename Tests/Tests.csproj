@@ -44,6 +44,9 @@
   </Choose>
   <ItemGroup>
     <Compile Include="CollectionExtensions.cs" />
+    <Compile Include="Day10\ElvesLookElvesSayTests.cs" />
+    <Compile Include="Day10\ILookAndSayProcessor.cs" />
+    <Compile Include="Day10\LookAndSayProcessor.cs" />
     <Compile Include="Day1\INotQuiteLisp.cs" />
     <Compile Include="Day1\INotQuiteLispPositionFinder.cs" />
     <Compile Include="Day4\ILowestNumberForMd5WithAtLeastFiveLeadingZerosFinder.cs" />
@@ -184,6 +187,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Day9\AllInASingleNight_PuzzleInput.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Day10\Elves Look, Elves Say.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Day10\ElvesLookElvesSay_PuzzleInput.txt" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
