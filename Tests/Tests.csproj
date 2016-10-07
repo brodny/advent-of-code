@@ -47,6 +47,7 @@
     <Compile Include="Day10\ElvesLookElvesSayTests.cs" />
     <Compile Include="Day10\ILookAndSayProcessor.cs" />
     <Compile Include="Day10\LookAndSayProcessor.cs" />
+    <Compile Include="Day11\CorporatePolicyTests.cs" />
     <Compile Include="Day1\INotQuiteLisp.cs" />
     <Compile Include="Day1\INotQuiteLispPositionFinder.cs" />
     <Compile Include="Day4\ILowestNumberForMd5WithAtLeastFiveLeadingZerosFinder.cs" />
@@ -193,6 +194,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Day10\ElvesLookElvesSay_PuzzleInput.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Day11\Corporate Policy.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Day11\CorporatePolicy_PuzzleInput.txt" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
