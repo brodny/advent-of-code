@@ -50,6 +50,8 @@
     <Compile Include="Day11\CorporatePolicyTests.cs" />
     <Compile Include="Day11\IPasswordChecker.cs" />
     <Compile Include="Day11\IPasswordGenerator.cs" />
+    <Compile Include="Day11\PasswordChecker.cs" />
+    <Compile Include="Day11\PasswordGenerator.cs" />
     <Compile Include="Day1\INotQuiteLisp.cs" />
     <Compile Include="Day1\INotQuiteLispPositionFinder.cs" />
     <Compile Include="Day4\ILowestNumberForMd5WithAtLeastFiveLeadingZerosFinder.cs" />

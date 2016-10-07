@@ -14,6 +14,11 @@ namespace Tests.Day11
         [TestCase("abbceffg", ExpectedResult = false)]
         // abbcegjk fails the third requirement, because it only has one double letter (bb).
         [TestCase("abbcegjk", ExpectedResult = false)]
+        // The next password after abcdefgh is abcdffaa.
+        [TestCase("abcdffaa", ExpectedResult = true)]
+        // The next password after ghijklmn is ghjaabcc, because you eventually skip
+        // all the passwords that start with ghi..., since i is not allowed.
+        [TestCase("ghjaabcc", ExpectedResult = true)]
         public bool Provided_passwords_are_incorrect(string password)
         {
             IPasswordChecker passwordChecker = Kernel.Get<IPasswordChecker>();
